@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Paquete
   - Cliente
+  - Lento
+  - Rapido
   layers:
   - Default
   - TransparentFX
