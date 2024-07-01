@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Rapido
+  - Lento
+  - GF
+  - Enemigo
+  - Casa
   layers:
   - Default
   - TransparentFX
