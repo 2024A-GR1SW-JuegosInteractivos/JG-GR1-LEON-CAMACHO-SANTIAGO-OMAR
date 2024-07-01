@@ -6,10 +6,13 @@ public class GameBehaviour : MonoBehaviour
     [SerializeField] private float delayDestroy = 0.5f;
     private bool tieneGF;
     public GameObject novia; // Asigna la novia en el inspector
+    public AudioClip explosionSound; // Asigna el sonido de explosión en el inspector
+    private AudioSource explosionAudioSource; // Fuente de audio para el sonido de explosión
 
     void Start()
     {
         novia.SetActive(false); // Asegúrate de que la novia esté desactivada al inicio
+        explosionAudioSource = GetComponent<AudioSource>(); // Obtener el componente de AudioSource
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -25,6 +28,9 @@ public class GameBehaviour : MonoBehaviour
         {
             tieneGF = false;
             Debug.Log("Mataste al enemigo!");
+
+            // Reproducir sonido de explosión
+            explosionAudioSource.PlayOneShot(explosionSound);
 
             // Hacer aparecer a la novia
             novia.SetActive(true);
